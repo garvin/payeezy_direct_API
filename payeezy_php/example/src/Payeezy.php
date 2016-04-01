@@ -391,7 +391,7 @@ class Payeezy
 
     $nonce = strval(hexdec(bin2hex(openssl_random_pseudo_bytes(4, $cstrong))));
 
-    $timestamp = sprintf("%.0f", microtime(true) * 1000);
+    $timestamp = sprintf('%.0f', array_sum(explode(' ', microtime())) * 1000);
 
     $data = self::$apiKey . $nonce . $timestamp . self::$merchantToken . $payload;
 
